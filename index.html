@@ -1,0 +1,83 @@
+<!-- A basic template website for my portfolio -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="presentation">
+            <div class="introduction">
+                <h1>Hi, I'm <span>John Doe</span></h1>
+                <p>And I'm a <span>Web Developer</span></p>
+            </div>
+        </section>
+        <section class="about">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, voluptates. Adipisci alias
+                aspernatur atque autem, consectetur consequatur cumque debitis delectus doloremque doloribus ea eius
+                enim eos est ex explicabo facilis fugiat harum id impedit in incidunt ipsa ipsum iusto laborum magnam
+                maxime minima molestias natus nemo nesciunt nihil nisi nobis non nulla obcaecati officiis omnis optio
+                pariatur perspiciatis placeat praesentium quae quam quasi quibusdam quidem quisquam quo ratione
+                recusandae rem repellendus repudiandae rerum saepe sapiente sequi similique sit soluta sunt suscipit
+                tempora tenetur totam ullam unde ut vel veniam voluptas voluptates voluptatum. Adipisci alias aspernatur
+                atque autem, consectetur consequatur cumque debitis delectus doloremque doloribus ea eius enim eos est
+                ex explicabo facilis fugiat harum id impedit in incidunt ipsa ipsum iusto laborum magnam maxime minima
+                molestias natus nemo nesciunt nihil nisi nobis non nulla obcaecati officiis omnis optio pariatur
+                perspiciatis placeat praesentium quae quam quasi quibusdam quidem quisquam quo ratione recusandae rem
+                repellendus repudiandae rerum saepe sapiente sequi similique sit soluta sunt suscipit tempora tenetur
+                totam ullam unde
+            </p>
+        </section>
+        <section class="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="img/portfolio-1.jpg" alt="Portfolio Item 1">
+                    <h3>Portfolio Item 1</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src="img/portfolio-2.jpg" alt="Portfolio Item 2">
+                    <h3>Portfolio Item 2</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src="img/portfolio-3.jpg" alt="Portfolio Item 3">
+                    <h3>Portfolio Item 3</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src="img/portfolio-4.jpg" alt="Portfolio Item 4">
+                    <h3>Portfolio Item 4</h3>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <h2>Contact</h2>
+            <form action="contact.php" method="post">
+                <input type="text" name="name" placeholder="Full Name">
+                <input type="email" name="email" placeholder="Email">
+                <textarea name="message" placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2020 John Doe</p>
+    </footer>
+</body>
+
+</html>
