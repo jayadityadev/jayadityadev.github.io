@@ -1,110 +1,107 @@
-<!-- Portofolio Website -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Portofolio Website</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayaditya Dev - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 32);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(0, 0, 45);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 80px 0;
+        }
+
+        .firstSection>div {
+            width: 30%;
+        }
+
+        .leftSection {
+            font-size: 2.5rem;
+        }
+
+        .rightSection img {
+            width: 80%;
+        }
+
+        .rightSection div {
+            width: 30%;
+        }
+
+        .purple {
+            color: rgb(173, 88, 252);
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <div class="container">
-            <nav>
-                <div class="nav-brand">
-                    <a href="#">Portofolio</a>
-                </div>
-                <div class="nav-items">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        <nav>
+            <div class="left">
+                Jayaditya's Portfolio
+            </div>
+            <div class="right">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Projects</li>
+                    <li>Contact Me</li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <section id="home">
-        <div class="container">
-            <div class="home-content">
-                <h1>Portofolio Website</h1>
-                <p>Build your own portofolio website with this template</p>
-                <a href="#contact" class="btn">Contact Me</a>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, My name is
+                <span class="purple">Jayaditya Dev</span>
+                and I'm a passionate
+                Tech Enthusiast
             </div>
-        </div>
-    </section>
-    <section id="about">
-        <div class="container">
-            <div class="about-content">
-                <h1>About Me</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, voluptate. Quisquam, quod, voluptate.</p>
-                <a href="#contact" class="btn">Contact Me</a>
+            <div class="rightSection">
+                <img src="Images/developer.png" alt="">
             </div>
-        </div>
-    </section>
-    <section id="services">
-        <div class="container">
-            <div class="services-content">
-                <h1>Services</h1>
-                <div class="services">
-                    <div class="service">
-                        <h2>Web Design</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, voluptate.</p>
-                    </div>
-                    <div class="service">
-                        <h2>Web Development</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, voluptate.</p>
-                    </div>
-                    <div class="service">
-                        <h2>SEO</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, voluptate.</p>
-                    </
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="portfolio">
-        <div class="container">
-            <div class="portfolio-content">
-                <h1>Portfolio</h1>
-                <div class="portfolio">
-                    <div class="portfolio-item">
-                        <img src="img/portfolio1.jpg" alt="Portfolio 1">
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="img/portfolio2.jpg" alt="Portfolio 2">
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="img/portfolio3.jpg" alt="Portfolio 3">
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="img/portfolio4.jpg" alt="Portfolio 4">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h1>Contact Me</h1>
-                <form action="">
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
-                    <textarea placeholder="Message"></textarea>
-                    <button type="submit" class="btn">Send</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2021 Portofolio Website</p>
-            </div>
-        </div>
-    </footer>
+        </section>
+    </main>
 </body>
+
 </html>

@@ -1,0 +1,110 @@
+<!-- Portofolio Website -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portofolio Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="nav-brand">
+                    <a href="#">Portofolio</a>
+                </div>
+                <div class="nav-items">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section id="home">
+        <div class="container">
+            <div class="home-content">
+                <h1>Portofolio Website</h1>
+                <p>Build your own portofolio website with this template</p>
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <h1>About Me</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, voluptate. Quisquam, quod, voluptate.</p>
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="container">
+            <div class="services-content">
+                <h1>Services</h1>
+                <div class="services">
+                    <div class="service">
+                        <h2>Web Design</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, voluptate.</p>
+                    </div>
+                    <div class="service">
+                        <h2>Web Development</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, voluptate.</p>
+                    </div>
+                    <div class="service">
+                        <h2>SEO</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod, voluptate.</p>
+                    </
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio">
+        <div class="container">
+            <div class="portfolio-content">
+                <h1>Portfolio</h1>
+                <div class="portfolio">
+                    <div class="portfolio-item">
+                        <img src="img/portfolio1.jpg" alt="Portfolio 1">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="img/portfolio2.jpg" alt="Portfolio 2">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="img/portfolio3.jpg" alt="Portfolio 3">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="img/portfolio4.jpg" alt="Portfolio 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h1>Contact Me</h1>
+                <form action="">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Message"></textarea>
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2021 Portofolio Website</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
