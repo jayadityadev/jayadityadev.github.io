@@ -1,0 +1,168 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .nav-brand a {
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+header .nav-items ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header .nav-items ul li {
+    margin-left: 20px;
+}
+
+header .nav-items ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+header .nav-items ul li a:hover {
+    color: #f0a500;
+}
+
+section {
+    padding: 50px 0;
+}
+
+section#home {
+    background: url('img/home-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 150px 0;
+}
+
+section#home .home-content h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+section#home .home-content p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+section#home .home-content .btn {
+    background-color: #f0a500;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+section#home .home-content .btn:hover {
+    background-color: #fff;
+}
+
+section#about, section#services, section#portfolio, section#contact {
+    text-align: center;
+}
+
+section#about .about-content, section#services .services-content, section#portfolio .portfolio-content, section#contact .contact-content {
+    margin: 0 auto;
+    width: 70%;
+}
+
+section#services .services {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+section#services .service {
+    flex-basis: 30%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+section#services .service h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+section#portfolio .portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+section#portfolio .portfolio-item {
+    flex-basis: 45%;
+    margin-bottom: 20px;
+}
+
+section#portfolio .portfolio-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+section#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#contact form input, section#contact form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+section#contact form .btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section#contact form .btn:hover {
+    background-color: #f0a500;
+    color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .footer-content {
+    margin: 0 auto;
+}
