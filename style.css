@@ -84,6 +84,12 @@ main hr {
   cursor: pointer;
 }
 
+.leftSection .btn:hover {
+  background-color: rgb(40, 40, 112);
+  border-color: rgb(163, 163, 238);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
 .leftSection .buttons {
   padding: 50px 0;
 }
@@ -148,7 +154,7 @@ main hr {
   top: 74px;
   color: rgb(160, 160, 160);
   width: 180px;
-  font-size: 10px;
+  font-size: 12px;
   right: 3px;
 }
 

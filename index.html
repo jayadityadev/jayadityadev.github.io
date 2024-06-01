@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jayaditya Dev's professional portfolio showcasing web development, penetration testing, and more.">
-    <meta name="keywords" content="Jayaditya Dev, Web Developer, Penetration Tester, Python Developer, C Developer, Shell Scripter">
+    <meta name="description"
+        content="Jayaditya Dev's professional portfolio showcasing web development, penetration testing, and more.">
+    <meta name="keywords"
+        content="Jayaditya Dev, Web Developer, Penetration Tester, Python Developer, C Developer, Shell Scripter">
     <title>Jayaditya Dev - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="Images/favicon.ico" sizes="16x16" type="image/x-icon">
 </head>
 
 <body>
@@ -23,11 +25,11 @@
                 </div>
                 <div class="right">
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/">About</a></li>
-                        <li><a href="/">Services</a></li>
-                        <li><a href="/">Projects</a></li>
-                        <li><a href="/">Contact Me</a></li>
+                        <li><a href="projects.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact Me</a></li>
                     </ul>
                 </div>
             </nav>
@@ -45,12 +47,13 @@
                     </div>
                     <span id="element"></span>
                     <div class="buttons">
-                        <button class="btn">Download Resume</button>
-                        <button class="btn">Visit GitHub</button>
+                        <a href="/"><button class="btn">Download Resume</button></a>
+                        <a href="https://github.com/jayadityadev" target="_blank"><button class="btn">Visit
+                                GitHub</button></a>
                     </div>
                 </div>
                 <div class="rightSection">
-                    <img src="Images/developer.png" alt="">
+                    <img src="Images/developer.png" alt="Developer Image" loading="lazy">
                 </div>
             </section>
             <hr>
@@ -65,37 +68,51 @@
                     <div class="vertical">
                         <img src="Images/html-logo.png" alt="" class="image-top">
                         <div class="vertical-title">HTML Developer (2019-2020)</div>
-                        <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quia
-                            quas praesentium impedit maiores tenetur libero consequatur, sunt recusandae, neque maxime
-                            debitis exercitationem.</div>
+                        <div class="vertical-desc">
+                            Developed and maintained responsive web applications using HTML, CSS, and JavaScript.
+                            Collaborated with designers to create user-friendly and visually appealing interfaces.
+                            Improved website performance and accessibility, resulting in a 20% increase in user
+                            engagement.
+                        </div>
                     </div>
                     <div class="vertical">
                         <img src="Images/python-logo.png" alt="" class="image-top">
                         <div class="vertical-title">Python Developer (2021-Present)</div>
-                        <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quia
-                            quas praesentium impedit maiores tenetur libero consequatur, sunt recusandae, neque maxime
-                            debitis exercitationem.</div>
+                        <div class="vertical-desc">
+                            Developed and maintained responsive web applications using HTML, CSS, and JavaScript.
+                            Collaborated with designers to create user-friendly and visually appealing interfaces.
+                            Improved website performance and accessibility, resulting in a 20% increase in user
+                            engagement.
+                        </div>
                     </div>
                     <div class="vertical">
                         <img src="Images/cybersec-logo-2.png" alt="" class="image-top">
                         <div class="vertical-title">Penetration Tester (2021-Present)</div>
-                        <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quia
-                            quas praesentium impedit maiores tenetur libero consequatur, sunt recusandae, neque maxime
-                            debitis exercitationem.</div>
+                        <div class="vertical-desc">
+                            Conducted vulnerability assessments and penetration testing for client systems to identify
+                            security weaknesses. Developed comprehensive reports detailing findings and provided
+                            actionable recommendations to improve security posture. Participated in incident response
+                            and remediation efforts.
+                        </div>
                     </div>
                     <div class="vertical">
                         <img src="Images/ubuntu-logo-2.png" alt="" class="image-top">
                         <div class="vertical-title">Bash Shell Scripter (2021-Present)</div>
-                        <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quia
-                            quas praesentium impedit maiores tenetur libero consequatur, sunt recusandae, neque maxime
-                            debitis exercitationem.</div>
+                        <div class="vertical-desc">
+                            Developed and maintained shell scripts to automate system administration tasks, improving
+                            efficiency and reliability. Managed server configurations and performed regular system
+                            updates. Created documentation for scripts and processes to ensure maintainability.
+                        </div>
                     </div>
                     <div class="vertical">
                         <img src="Images/c-logo.png" alt="" class="image-top">
                         <div class="vertical-title">C Developer<br> (2023-Present)</div>
-                        <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quia
-                            quas praesentium impedit maiores tenetur libero consequatur, sunt recusandae, neque maxime
-                            debitis exercitationem.</div>
+                        <div class="vertical-desc">
+                            Developed high-performance software applications in C, focusing on system-level programming
+                            and embedded systems. Optimized existing codebases for better performance and reduced memory
+                            usage. Collaborated with cross-functional teams to integrate software solutions with
+                            hardware components.
+                        </div>
                     </div>
                 </div>
             </section>
@@ -125,6 +142,9 @@
             strings: ['Web Developer.', 'Penetration Tester.', 'Python Developer.', 'C Developer.', 'Linux Enthusiast.', 'Shell Scripter.', 'Tech Freak.'],
             typeSpeed: 50,
             loop: true,
+            onComplete: function (self) {
+                console.log('Typing animation completed');
+            }
         });
     </script>
 </body>
