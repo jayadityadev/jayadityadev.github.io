@@ -8,154 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: rgb(0, 0, 32);
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            flex: 0 0 auto;
-        }
-
-        main {
-            flex: 1 0 auto;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 80px;
-            background-color: rgb(0, 0, 43);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            list-style: none;
-            margin: 0 23px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-        }
-
-        nav ul li a:hover {
-            color: rgb(163, 163, 238);
-            font-size: 1.01rem;
-        }
-
-        .left {
-            font-size: 1.5rem;
-        }
-
-        .firstSection {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin: 140px 0;
-        }
-
-        .firstSection>div {
-            width: 30%;
-        }
-
-        .leftSection {
-            font-size: 2.5rem;
-        }
-
-        .rightSection img {
-            width: 80%;
-        }
-
-        .text-purple {
-            color: rgb(180, 108, 248);
-        }
-
-        #element {
-            color: rgb(173, 88, 252);
-        }
-
-        .secondSection {
-            max-width: 80vw;
-            margin: auto;
-            height: 80vh;
-        }
-
-        main hr {
-            border: 0;
-            background: rgb(163, 163, 238);
-            height: 1.2px;
-            margin: 60px 84px;
-        }
-
-        .secondSection h1 {
-            font-size: 1.9rem;
-        }
-
-        .text-gray {
-            color: gray;
-        }
-
-        .secondSection .box {
-            background: white;
-            width: 80vw;
-            height: 2px;
-            margin: 56px 0;
-            display: flex;
-        }
-
-        .secondSection .vertical {
-            height: 93px;
-            width: 1px;
-            background-color: white;
-            margin: 0 100px;
-        }
-
-        footer {
-            background-color: rgb(0, 0, 43);
-            padding: 20px 0;
-            text-align: center;
-            color: white;
-            width: 100%;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .social-links a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: white;
-            font-size: 1rem;
-        }
-
-        .social-links a:hover {
-            color: rgb(163, 163, 238);
-        }
-
-        footer p {
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -188,6 +41,10 @@
                         and I'm a passionate
                     </div>
                     <span id="element"></span>
+                    <div class="buttons">
+                        <button class="btn">Download Resume</button>
+                        <button class="btn">Visit GitHub</button>
+                    </div>
                 </div>
                 <div class="rightSection">
                     <img src="Images/developer.png" alt="">
@@ -199,13 +56,34 @@
                     What have I done so far
                 </span>
                 <h1>
-                    Work Experience [*Work under progress*]
+                    Work Experience
                 </h1>
                 <div class="box">
-                    <div class="vertical"></div>
-                    <div class="vertical"></div>
-                    <div class="vertical"></div>
-                    <div class="vertical"></div>
+                    <div class="vertical">
+                        <img src="Images/html-logo.png" alt="" class="image-top">
+                        <div class="vertical-title">HTML Developer (2019-2020)</div>
+                        <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quia quas praesentium impedit maiores tenetur libero consequatur, sunt recusandae, neque maxime debitis exercitationem.</div>
+                    </div>
+                    <div class="vertical">
+                        <img src="Images/python-logo.png" alt="" class="image-top">
+                        <div class="vertical-title">Python Developer (2021-Present)</div>
+                        <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quia quas praesentium impedit maiores tenetur libero consequatur, sunt recusandae, neque maxime debitis exercitationem.</div>
+                    </div>
+                    <div class="vertical">
+                        <img src="Images/cybersec-logo-2.png" alt="" class="image-top">
+                        <div class="vertical-title">Penetration Tester (2021-Present)</div>
+                        <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quia quas praesentium impedit maiores tenetur libero consequatur, sunt recusandae, neque maxime debitis exercitationem.</div>
+                    </div>
+                    <div class="vertical">
+                        <img src="Images/ubuntu-logo-2.png" alt="" class="image-top">
+                        <div class="vertical-title">Bash Shell Scripter (2021-Present)</div>
+                        <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quia quas praesentium impedit maiores tenetur libero consequatur, sunt recusandae, neque maxime debitis exercitationem.</div>
+                    </div>
+                    <div class="vertical">
+                        <img src="Images/c-logo.png" alt="" class="image-top">
+                        <div class="vertical-title">C Developer<br> (2023-Present)</div>
+                        <div class="vertical-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quia quas praesentium impedit maiores tenetur libero consequatur, sunt recusandae, neque maxime debitis exercitationem.</div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -213,9 +91,12 @@
     <footer>
         <div class="footer-container">
             <div class="social-links">
-                <a href="https://linkedin.com/in/jayadityadev26" target="_blank">LinkedIn</a>
-                <a href="https://github.com/jayadityadev" target="_blank">GitHub</a>
-                <a href="mailto:jayadityadev26@outlook.com">Email</a>
+                <!-- <img src="Images/image.png" alt=""> -->
+                <a href="https://linkedin.com/in/jayadityadev26" target="_blank"><img class="image-bottom" src="Images/linkedin-logo.png" alt="">LinkedIn</a>
+                <a href="https://github.com/jayadityadev" target="_blank"><img src="Images/github-logo.png" alt="" class="image-bottom">GitHub</a>
+                <a href="https://twitter.com/jayadityadev" target="_blank"><img src="Images/x-logo.png" alt="" class="image-bottom">Twitter</a>
+                <a href="https://www.instagram.com/jayadityadev2612/" target="_blank"><img src="Images/instagram-logo.png" alt="" class="image-bottom">Instagram</a>
+                <a href="mailto:jayadityadev26@outlook.com" target="_blank"><img src="Images/email-logo.png" alt="" class="image-bottom">Email</a>
             </div>
             <p>&copy; 2024 Jayaditya Dev. All rights reserved.</p>
         </div>
@@ -223,8 +104,9 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
-            strings: ['Penetration Tester.', 'Python Developer.', 'C Developer.', 'Linux Enthusiast.'],
+            strings: ['Web Developer.', 'Penetration Tester.', 'Python Developer.', 'C Developer.', 'Linux Enthusiast.', 'Shell Scripter.', 'Tech Freak.'],
             typeSpeed: 50,
+            loop: true,
         });
     </script>
 </body>
