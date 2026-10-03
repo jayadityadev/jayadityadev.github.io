@@ -14,6 +14,12 @@ describe("Data Contract Seam", () => {
     expect(profileData.links.resume).toBe("/resume.pdf");
     expect(profileData.education.institution).toContain("KS Institute of Technology");
     expect(profileData.education.cgpa).toBe("8.88");
+    expect(profileData.interests.length).toBeGreaterThanOrEqual(4);
+    const interestLabels = profileData.interests.map((i) => i.label);
+    expect(interestLabels).toContain("Guitar");
+    expect(interestLabels).toContain("Breaking Systems");
+    expect(interestLabels).toContain("Table Tennis");
+    expect(interestLabels).toContain("Valorant");
   });
 
   it("projectsData contains the four flagship projects with required properties", () => {

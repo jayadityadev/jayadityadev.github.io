@@ -145,11 +145,27 @@ export const Hero: React.FC = () => {
               </p>
             </div>
 
-            {/* Summary */}
-            <div className="px-4 py-3 sm:py-3.5 bg-surface/10 flex-1 flex items-center">
+            {/* Summary & Passions */}
+            <div className="px-4 py-3 sm:py-3.5 bg-surface/10 flex-1 flex flex-col justify-center gap-2">
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
                 {profileData.summary}
               </p>
+
+              {/* Subtle Off-Duty Passions & Interests */}
+              <div className="flex flex-wrap items-center gap-1.5 pt-1 text-[11px] font-mono text-zinc-500">
+                <span className="text-zinc-400 dark:text-zinc-500 font-medium mr-1 select-none">
+                  Off-duty:
+                </span>
+                {profileData.interests.map((interest, idx) => (
+                  <span
+                    key={idx}
+                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-border/80 bg-surface/80 text-zinc-700 dark:text-zinc-300 select-none hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors"
+                  >
+                    <span>{interest.icon}</span>
+                    <span>{interest.label}</span>
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

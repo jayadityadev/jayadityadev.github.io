@@ -16,15 +16,15 @@ export const IllustratedAvatar: React.FC<IllustratedAvatarProps> = ({
       {/* Light Mode: Pencil/Ink Hand-drawn Sketch */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/avatar-sketch.jpg"
+        src="/avatar-sketch-light.jpg"
         alt="Jayaditya Dev avatar in light mode"
         className="w-full h-full object-cover select-none transition-opacity duration-300 dark:opacity-0 opacity-100"
       />
 
-      {/* Dark Mode: Stylized Radiant Linework (Pixel-Perfect Overlap) */}
+      {/* Dark Mode: Richly Colored Digital Portrait with Sub-Pixel Aligned Outlines */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/avatar-dark.jpg"
+        src="/avatar-colored-dark.jpg"
         alt="Jayaditya Dev avatar in dark mode"
         className="absolute inset-0 w-full h-full object-cover select-none transition-opacity duration-300 dark:opacity-100 opacity-0"
       />

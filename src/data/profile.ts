@@ -22,6 +22,10 @@ export interface Profile {
     description: string;
     badge?: string;
   }[];
+  interests: {
+    icon: string;
+    label: string;
+  }[];
 }
 
 export const profileData: Profile = {
@@ -62,5 +66,11 @@ export const profileData: Profile = {
       description: "Maintained a CGPA of 8.88 through Semester 6 in Computer Science & Engineering at KSIT.",
       badge: "CGPA 8.88",
     },
+  ],
+  interests: [
+    { icon: "🎸", label: "Guitar" },
+    { icon: "⚡", label: "Breaking Systems" },
+    { icon: "🏓", label: "Table Tennis" },
+    { icon: "🎯", label: "Valorant" },
   ],
 };
