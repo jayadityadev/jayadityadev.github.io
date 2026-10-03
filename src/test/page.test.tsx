@@ -34,6 +34,6 @@ describe("Root Page Assembly & Footer (Seam 1)", () => {
     // Terminal Footer
     expect(screen.getAllByText(/jayadityadev10@gmail\.com/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/Bengaluru, Karnataka, IN/i)).toBeInTheDocument();
-    expect(screen.getByText(/curl -X POST/i)).toBeInTheDocument();
+    expect(screen.getByText(/curl -sL .*api\/contact\.json/i)).toBeInTheDocument();
   });
 });

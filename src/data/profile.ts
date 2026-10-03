@@ -10,6 +10,9 @@ export interface Profile {
     github: string;
     linkedin: string;
     resume: string;
+    youtube?: string;
+    instagram?: string;
+    twitter?: string;
   };
   education: {
     degree: string;
@@ -41,6 +44,8 @@ export const profileData: Profile = {
     github: "https://github.com/jayadityadev",
     linkedin: "https://linkedin.com/in/jayadityadev26",
     resume: "/resume.pdf",
+    youtube: "https://youtube.com/@jayadityadev",
+    instagram: "https://instagram.com/jayadityadev",
   },
   education: {
     degree: "Bachelor of Engineering, Computer Science & Engineering",

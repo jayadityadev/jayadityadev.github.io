@@ -8,9 +8,7 @@ import { motion } from "framer-motion";
 export const Footer: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
-  const curlCommand = `curl -X POST https://jayadityadev.tech/api/contact \\
-  -H "Content-Type: application/json" \\
-  -d '{"name": "Recruiter", "email": "${profileData.email}", "message": "Let us connect"}'`;
+  const curlCommand = `curl -sL https://jayadityadev.tech/api/contact.json`;
 
   const handleCopy = () => {
     navigator.clipboard?.writeText(curlCommand);
@@ -50,7 +48,7 @@ export const Footer: React.FC = () => {
               <span className="w-2.5 h-2.5 rounded-full bg-zinc-400 dark:bg-zinc-600" />
               <span className="ml-2 font-mono text-xs text-zinc-500 flex items-center gap-1.5">
                 <Terminal className="w-3.5 h-3.5" />
-                <span>bash - contact.sh</span>
+                <span>curl - api/contact.json</span>
               </span>
             </div>
 

@@ -64,4 +64,17 @@ describe("Data Contract Seam", () => {
     expect(text).toContain("ingestion");
     expect(text).toContain("citation");
   });
+
+  it("public/api/contact.json exists and contains synchronized profile data", () => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const fs = require("fs");
+    const path = require("path");
+    const contactJsonPath = path.resolve(process.cwd(), "public/api/contact.json");
+    expect(fs.existsSync(contactJsonPath)).toBe(true);
+
+    const contactData = JSON.parse(fs.readFileSync(contactJsonPath, "utf-8"));
+    expect(contactData.name).toBe(profileData.name);
+    expect(contactData.contact.email).toBe(profileData.email);
+    expect(contactData.contact.github).toBe(profileData.links.github);
+  });
 });

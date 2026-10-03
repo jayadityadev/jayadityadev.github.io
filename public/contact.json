@@ -1,0 +1,18 @@
+{
+  "name": "Jayaditya Dev",
+  "role": "Systems / Backend / AI Engineer",
+  "status": "Available for full-time backend & AI engineering roles",
+  "location": "Bengaluru, Karnataka, IN",
+  "contact": {
+    "email": "jayadityadev10@gmail.com",
+    "github": "https://github.com/jayadityadev",
+    "linkedin": "https://linkedin.com/in/jayadityadev26",
+    "resume": "https://jayadityadev.tech/resume.pdf"
+  },
+  "focus": [
+    "High-throughput backend architectures & APIs",
+    "RAG pipelines & multi-agent systems",
+    "Distributed systems & performance optimization"
+  ],
+  "message": "Let's build high-throughput production systems together. Send an email to jayadityadev10@gmail.com to connect!"
+}

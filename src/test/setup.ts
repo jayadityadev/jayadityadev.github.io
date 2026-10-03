@@ -1,6 +1,12 @@
 import "@testing-library/jest-dom";
 import { vi } from "vitest";
 
+// Mock next/font/google
+vi.mock("next/font/google", () => ({
+  Inter: () => ({ variable: "--font-inter" }),
+  JetBrains_Mono: () => ({ variable: "--font-mono" }),
+}));
+
 // Mock IntersectionObserver for Motion whileInView
 class MockIntersectionObserver {
   observe = vi.fn();
