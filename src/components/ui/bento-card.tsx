@@ -37,7 +37,7 @@ export const BentoCard: React.FC<BentoCardProps> = ({
     <div
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-950/70 backdrop-blur-md p-6 sm:p-8 transition-all duration-300 hover:border-accent/50 ${sizeClasses[size]} ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/70 backdrop-blur-md p-6 sm:p-8 transition-all duration-300 hover:border-accent/50 shadow-sm dark:shadow-none ${sizeClasses[size]} ${className}`}
     >
       {/* Dynamic Cursor Spotlight Gradient */}
       {mousePos && (

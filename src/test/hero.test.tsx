@@ -12,11 +12,11 @@ describe("Hero Component (Seam 1)", () => {
     expect(screen.getByText(/AVAILABLE FOR FULL-TIME ROLES/i)).toBeInTheDocument();
   });
 
-  it("renders CTAs and interactive systems avatar", () => {
+  it("renders CTAs and illustrated dual-theme avatar", () => {
     render(<Hero />);
 
     expect(screen.getByRole("link", { name: /view projects/i })).toHaveAttribute("href", "#projects");
     expect(screen.getByRole("link", { name: /download cv/i })).toHaveAttribute("href", "/resume.pdf");
-    expect(screen.getByTestId("systems-avatar")).toBeInTheDocument();
+    expect(screen.getByText(/Fig\. 1\./i)).toBeInTheDocument();
   });
 });

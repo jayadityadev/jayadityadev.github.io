@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
 import { projectsData } from "@/data/projects";
 import { BentoCard } from "@/components/ui/bento-card";
+import { GithubContributions } from "@/components/ui/github-contributions";
+import { AgenticEngineeringCard } from "@/components/ui/agentic-card";
 import { Github, ArrowUpRight, CheckCircle, Cpu, Shield, Brain, Sparkles } from "lucide-react";
 
 export const ProjectsBento: React.FC = () => {
@@ -23,20 +27,24 @@ export const ProjectsBento: React.FC = () => {
       {/* Section Header */}
       <div className="flex flex-col items-start gap-2 mb-12">
         <div className="flex items-center gap-2 text-xs font-mono tracking-[0.2em] uppercase text-accent">
-          <span>02 // ARCHITECTURE & PROJECTS</span>
+          <span>03 // ARCHITECTURE & PROJECTS</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-100 font-sans">
           Production Systems & Implementations
         </h2>
         <p className="text-sm text-zinc-400 max-w-lg">
-          Asymmetric bento overview of real-time backends, ML inference pipelines, and API services.
+          Balanced bento overview of real-time backends, ML inference pipelines, and autonomous agent loops.
         </p>
       </div>
 
       {/* Bento Grid Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        {/* Project Cards */}
         {projectsData.map((project) => (
-          <BentoCard key={project.id} size={project.bentoSize}>
+          <BentoCard
+            key={project.id}
+            size={project.id === "guardian-ai" ? "large" : "medium"}
+          >
             {/* Top Bar: Icon, Title & Metric */}
             <div className="flex items-start justify-between gap-4 mb-4">
               <div className="flex items-center gap-3">
@@ -103,6 +111,16 @@ export const ProjectsBento: React.FC = () => {
             </div>
           </BentoCard>
         ))}
+
+        {/* Feature Card 1: Monochrome GitHub Contribution Graph */}
+        <BentoCard size="medium">
+          <GithubContributions />
+        </BentoCard>
+
+        {/* Feature Card 2: Autonomous Agentic Engineering (Full Width Closing Anchor) */}
+        <BentoCard size="large">
+          <AgenticEngineeringCard />
+        </BentoCard>
       </div>
     </section>
   );

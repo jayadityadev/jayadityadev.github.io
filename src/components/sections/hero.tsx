@@ -1,14 +1,56 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { profileData } from "@/data/profile";
 import { PulseBadge } from "@/components/ui/pulse-badge";
-import { SystemsAvatar } from "@/components/ui/systems-avatar";
+import { IllustratedAvatar } from "@/components/ui/illustrated-avatar";
 import { ArrowDown, FileText, Github, Linkedin } from "lucide-react";
 
 export const Hero: React.FC = () => {
+  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0, pctX: 50, pctY: 50 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    // Subtle 3D tilt angles (max +/- 10 degrees)
+    const tiltX = -((y - centerY) / centerY) * 8;
+    const tiltY = ((x - centerX) / centerX) * 8;
+
+    setMouseOffset({
+      x: tiltY,
+      y: tiltX,
+      pctX: (x / rect.width) * 100,
+      pctY: (y / rect.height) * 100,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setMouseOffset({ x: 0, y: 0, pctX: 50, pctY: 50 });
+  };
+
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-4 overflow-hidden">
-      {/* Background radial wash */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-accent/10 blur-[120px] pointer-events-none -z-10" />
+    <section
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-4 overflow-hidden"
+    >
+      {/* Interactive mouse-following radial spotlight aura */}
+      <div
+        className="absolute pointer-events-none -z-10 transition-all duration-300 ease-out"
+        style={{
+          top: `${mouseOffset.pctY}%`,
+          left: `${mouseOffset.pctX}%`,
+          width: "600px",
+          height: "400px",
+          transform: "translate(-50%, -50%)",
+          background: "radial-gradient(circle, var(--accent-glow, rgba(139, 92, 246, 0.18)) 0%, transparent 70%)",
+          filter: "blur(40px)",
+        }}
+      />
 
       <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left column: Typography & CTAs */}
@@ -18,7 +60,7 @@ export const Hero: React.FC = () => {
 
           {/* Heading */}
           <div className="flex flex-col gap-2">
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-zinc-100 font-sans">
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 font-sans">
               {profileData.name}
             </h1>
             <p className="text-xl sm:text-2xl font-mono text-accent font-medium tracking-tight">
@@ -27,7 +69,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Summary */}
-          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
+          <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
             {profileData.summary}
           </p>
 
@@ -75,9 +117,14 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Right column: Systems Avatar */}
+        {/* Right column: 3D Tilt Illustrated Avatar */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end">
-          <SystemsAvatar />
+          <IllustratedAvatar
+            style={{
+              transform: `perspective(1000px) rotateX(${mouseOffset.y}deg) rotateY(${mouseOffset.x}deg)`,
+              transition: "transform 0.15s ease-out",
+            }}
+          />
         </div>
       </div>
     </section>

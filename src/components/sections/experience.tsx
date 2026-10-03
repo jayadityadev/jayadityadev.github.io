@@ -19,14 +19,14 @@ export const ExperienceSection: React.FC = () => {
       </div>
 
       {/* Experience Spotlight Card */}
-      <div className="relative rounded-2xl border border-zinc-800 bg-zinc-900/40 backdrop-blur-md p-6 sm:p-8 transition-all hover:border-zinc-700/80 group">
+      <div className="relative rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/40 backdrop-blur-md p-6 sm:p-8 transition-all hover:border-zinc-300 dark:hover:border-zinc-700/80 shadow-sm dark:shadow-none group">
         {/* Subtle accent corner highlight */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors pointer-events-none" />
 
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-zinc-800/80">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-zinc-200 dark:border-zinc-800/80">
           <div>
             <div className="flex items-center gap-3">
-              <h3 className="text-2xl font-bold text-zinc-100 font-sans tracking-tight">
+              <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 font-sans tracking-tight">
                 {experienceData.company}
               </h3>
               <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-accent/15 border border-accent/30 text-accent font-medium">
