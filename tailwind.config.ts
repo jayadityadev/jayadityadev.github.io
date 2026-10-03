@@ -15,9 +15,9 @@ const config: Config = {
         "surface-elevated": "var(--bg-elevated, #18181f)",
         border: "var(--border-subtle, #27272a)",
         accent: {
-          DEFAULT: "var(--accent, #8b5cf6)",
-          muted: "var(--accent-muted, #7c3aed)",
-          glow: "var(--accent-glow, rgba(139, 92, 246, 0.25))",
+          DEFAULT: "var(--accent, #f4f4f5)",
+          muted: "var(--accent-muted, #a1a1aa)",
+          glow: "var(--accent-glow, rgba(255, 255, 255, 0.1))",
         },
       },
       fontFamily: {

@@ -1,90 +1,198 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { profileData } from "@/data/profile";
-import { PulseBadge } from "@/components/ui/pulse-badge";
 import { IllustratedAvatar } from "@/components/ui/illustrated-avatar";
-import { AntigravityParticles } from "@/components/ui/antigravity-particles";
-import { ArrowDown, FileText, Github, Linkedin } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
+import { Github, Linkedin, Mail, FileText, MapPin, GraduationCap, ArrowDown } from "lucide-react";
 
 export const Hero: React.FC = () => {
-  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0, pctX: 50, pctY: 50 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    // Subtle 3D tilt angles (max +/- 8 degrees)
-    const tiltX = -((y - centerY) / centerY) * 8;
-    const tiltY = ((x - centerX) / centerX) * 8;
-
-    setMouseOffset({
-      x: tiltY,
-      y: tiltX,
-      pctX: (x / rect.width) * 100,
-      pctY: (y / rect.height) * 100,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setMouseOffset({ x: 0, y: 0, pctX: 50, pctY: 50 });
-  };
-
   return (
-    <section
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-4 overflow-hidden"
-    >
-      {/* Interactive Antigravity Particle Physics Canvas */}
-      <AntigravityParticles />
+    <section className="relative w-full flex flex-col items-center pt-20">
+      <div className="max-w-4xl w-full border-x border-border flex flex-col bg-background">
+        {/* Banner Section with Isometric Blueprint Wireframe & Fig. 1. */}
+        <div className="relative w-full aspect-[2.6/1] sm:aspect-[3.6/1] border-b border-border bg-surface overflow-hidden flex items-center justify-center">
+          {/* Subtle blueprint dot grid pattern */}
+          <div className="absolute inset-0 bg-[radial-gradient(var(--border-subtle)_1px,transparent_0)] bg-[size:14px_14px] opacity-70" />
 
-      {/* Interactive mouse-following radial spotlight aura */}
-      <div
-        className="absolute pointer-events-none -z-10 transition-all duration-300 ease-out"
-        style={{
-          top: `${mouseOffset.pctY}%`,
-          left: `${mouseOffset.pctX}%`,
-          width: "600px",
-          height: "400px",
-          transform: "translate(-50%, -50%)",
-          background: "radial-gradient(circle, var(--accent-glow, rgba(139, 92, 246, 0.18)) 0%, transparent 70%)",
-          filter: "blur(40px)",
-        }}
-      />
+          {/* Isometric Blueprint Wireframe (Chanh Dai / Technical Drafting Style) */}
+          <svg
+            className="w-full h-full max-w-xl opacity-35 dark:opacity-40 pointer-events-none select-none text-zinc-400 dark:text-zinc-600"
+            viewBox="0 0 600 200"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+          >
+            {/* Perspective grid guidelines */}
+            <line x1="0" y1="180" x2="600" y2="40" strokeDasharray="3 3" />
+            <line x1="0" y1="20" x2="600" y2="160" strokeDasharray="3 3" />
 
-      <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* Left column: Typography & CTAs */}
-        <div className="lg:col-span-7 flex flex-col items-start gap-6 text-left">
-          {/* Status Badge */}
-          <PulseBadge label={profileData.status} />
+            {/* Left Isometric Cube Unit */}
+            <g transform="translate(140, 70)">
+              {/* Top face */}
+              <polygon
+                points="0,-30 50,-55 100,-30 50,-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+              />
+              {/* Left face */}
+              <polygon
+                points="0,-30 50,-5 50,45 0,20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+              />
+              {/* Right face */}
+              <polygon
+                points="50,-5 100,-30 100,20 50,45"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+              />
+              {/* Technical diagonal cross hatchings */}
+              <line x1="12" y1="-24" x2="50" y2="-5" strokeWidth="0.6" strokeDasharray="2 2" />
+              <line x1="25" y1="-18" x2="50" y2="-5" strokeWidth="0.6" strokeDasharray="2 2" />
+              <line x1="50" y1="-5" x2="88" y2="-24" strokeWidth="0.6" strokeDasharray="2 2" />
+            </g>
 
-          {/* Heading */}
-          <div className="flex flex-col gap-2">
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 font-sans">
-              {profileData.name}
-            </h1>
-            <p className="text-xl sm:text-2xl font-mono text-accent font-medium tracking-tight">
-              {profileData.tagline}
-            </p>
+            {/* Center Elevated Isometric Node */}
+            <g transform="translate(260, 40)">
+              {/* Top face with cutout */}
+              <polygon
+                points="0,-25 60,-55 120,-25 60,5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.4"
+              />
+              <polygon
+                points="25,-25 60,-42 95,-25 60,-8"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeDasharray="2 2"
+              />
+              {/* Left & Right faces */}
+              <polygon
+                points="0,-25 60,5 60,55 0,25"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.4"
+              />
+              <polygon
+                points="60,5 120,-25 120,25 60,55"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.4"
+              />
+            </g>
+
+            {/* Right Isometric Cube Unit */}
+            <g transform="translate(400, 85)">
+              <polygon
+                points="0,-20 40,-40 80,-20 40,0"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+              />
+              <polygon
+                points="0,-20 40,0 40,35 0,15"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+              />
+              <polygon
+                points="40,0 80,-20 80,15 40,35"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+              />
+            </g>
+          </svg>
+
+          {/* Technical Caption Fig. 1. */}
+          <span className="absolute bottom-2.5 right-3.5 font-mono text-[11px] text-zinc-500 tracking-wider select-none bg-surface/80 px-2 py-0.5 rounded border border-border/40">
+            <span className="font-semibold text-zinc-700 dark:text-zinc-300">Fig. 1.</span> Architectural Schematic
+          </span>
+        </div>
+
+        {/* Profile Card Header: Left Avatar + Right Identity (Social Media Profile Architecture) */}
+        <div className="w-full flex flex-col sm:flex-row items-center sm:items-stretch border-b border-border">
+          {/* Left Column: Circular Avatar with hairline ring, strictly static */}
+          <div className="p-4 sm:p-6 border-b sm:border-b-0 sm:border-r border-border shrink-0 flex items-center justify-center w-full sm:w-auto bg-surface/20">
+            <IllustratedAvatar sizeClassName="w-24 h-24 sm:w-36 sm:h-36" />
           </div>
 
-          {/* Summary */}
-          <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
-            {profileData.summary}
-          </p>
+          {/* Right Column: Name, Tagline & Summary */}
+          <div className="flex flex-col flex-1 min-w-0 w-full">
+            {/* Terminal Command & Status Bar */}
+            <div className="w-full px-4 py-2 sm:py-2.5 border-b border-border bg-surface/40 flex items-center justify-between font-mono text-xs select-none">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="text-zinc-500 hidden sm:inline">~/portfolio</span>
+                <span className="text-emerald-500 font-bold">❯</span>
+                <span className="text-zinc-700 dark:text-zinc-300 font-medium truncate">
+                  {profileData.status}
+                </span>
+              </div>
+              <span className="relative flex h-2 w-2 shrink-0 ml-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+            </div>
 
-          {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+            {/* Name + Verified Badge */}
+            <div className="px-4 py-3 sm:py-4 border-b border-border">
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 font-sans flex items-center gap-2">
+                <span>{profileData.name}</span>
+                <VerifiedBadge className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
+              </h1>
+              <p className="font-mono text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+                {profileData.tagline}
+              </p>
+            </div>
+
+            {/* Summary */}
+            <div className="px-4 py-3 sm:py-3.5 bg-surface/10 flex-1 flex items-center">
+              <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
+                {profileData.summary}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Social Media & Action Pill Bar */}
+        <div className="w-full px-4 py-3 border-b border-border flex flex-wrap items-center justify-between gap-3 bg-surface/30">
+          {/* Social Links */}
+          <div className="flex flex-wrap items-center gap-2">
             <a
-              href="#projects"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-mono font-medium uppercase tracking-wider bg-zinc-100 text-zinc-950 hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all"
+              href={profileData.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border text-xs font-mono text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-950 dark:hover:text-white transition-colors"
             >
-              <span>View Projects</span>
-              <ArrowDown className="w-3.5 h-3.5" />
+              <Github className="w-3.5 h-3.5" />
+              <span>GitHub</span>
+            </a>
+
+            <a
+              href={profileData.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border text-xs font-mono text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-950 dark:hover:text-white transition-colors"
+            >
+              <Linkedin className="w-3.5 h-3.5" />
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href={`mailto:${profileData.email}`}
+              aria-label="Email Jayaditya"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border text-xs font-mono text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-950 dark:hover:text-white transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              <span>Email</span>
             </a>
 
             <a
@@ -92,44 +200,28 @@ export const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               download="Jayaditya_Dev_Resume.pdf"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-mono font-medium uppercase tracking-wider border border-zinc-700/80 bg-zinc-900/60 text-zinc-200 hover:border-accent hover:text-white transition-all backdrop-blur-md"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-900 dark:border-zinc-100 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 text-xs font-mono font-medium hover:opacity-90 transition-opacity"
             >
-              <FileText className="w-3.5 h-3.5 text-accent" />
+              <FileText className="w-3.5 h-3.5" />
               <span>Download CV</span>
             </a>
+          </div>
 
-            <div className="flex items-center gap-2 pl-2">
-              <a
-                href={profileData.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub Profile"
-                className="p-2 rounded-full border border-zinc-800 bg-zinc-900/40 text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-all"
-              >
-                <Github className="w-4 h-4" />
-              </a>
-              <a
-                href={profileData.links.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn Profile"
-                className="p-2 rounded-full border border-zinc-800 bg-zinc-900/40 text-zinc-400 hover:text-zinc-100 hover:border-zinc-700 transition-all"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-            </div>
+          {/* Quick Signal Badges */}
+          <div className="flex items-center gap-4 text-xs font-mono text-zinc-500">
+            <span className="flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-zinc-400" />
+              <span>Bengaluru, IN</span>
+            </span>
+            <span className="hidden md:flex items-center gap-1.5">
+              <GraduationCap className="w-3.5 h-3.5 text-zinc-400" />
+              <span>KSIT (8.88 CGPA)</span>
+            </span>
           </div>
         </div>
 
-        {/* Right column: 3D Tilt Illustrated Avatar */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end">
-          <IllustratedAvatar
-            style={{
-              transform: `perspective(1000px) rotateX(${mouseOffset.y}deg) rotateY(${mouseOffset.x}deg)`,
-              transition: "transform 0.15s ease-out",
-            }}
-          />
-        </div>
+        {/* Technical Blueprint Striped Spacer Bar */}
+        <div className="w-full h-6 sm:h-8 border-b border-border bg-[repeating-linear-gradient(315deg,var(--border-subtle)_0,var(--border-subtle)_1px,transparent_0,transparent_50%)] bg-[length:10px_10px]" />
       </div>
     </section>
   );

@@ -1,94 +1,123 @@
+"use client";
+
 import React from "react";
-import { profileData } from "@/data/profile";
-import { ShieldAlert, Trophy, GraduationCap, Award } from "lucide-react";
+import { ShieldAlert, Trophy, GraduationCap } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const CredentialsSection: React.FC = () => {
   return (
-    <section id="credentials" className="py-20 px-4 max-w-5xl mx-auto w-full">
-      {/* Section Header */}
-      <div className="flex flex-col items-start gap-2 mb-12">
-        <div className="flex items-center gap-2 text-xs font-mono tracking-[0.2em] uppercase text-accent">
-          <span>03 // SIGNALS & CREDENTIALS</span>
+    <motion.section
+      id="credentials"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1.0] }}
+      className="w-full flex justify-center"
+    >
+      <div className="max-w-4xl w-full border-x border-border px-4 sm:px-6 py-16 bg-background">
+        {/* Section Header */}
+        <div className="flex flex-col items-start gap-2 mb-10 pb-6 border-b border-border">
+          <div className="flex items-center gap-2 text-xs font-mono tracking-[0.2em] uppercase text-zinc-500">
+            <span>03 // SIGNALS & CREDENTIALS</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 font-sans">
+            Proven Engineering Signals & Foundations
+          </h2>
+          <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 max-w-xl font-mono">
+            Competitive global rankings, national hackathon podium, and high academic performance.
+          </p>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-100 font-sans">
-          Proven Engineering Signals
-        </h2>
-        <p className="text-sm text-zinc-400 max-w-lg">
-          Competitive rankings, hackathon runner-up results, and computer science foundations.
-        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* Signal 1: TryHackMe Top 5% */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.05 }}
+            className="rounded-xl border border-border bg-surface/50 p-5 flex flex-col justify-between hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors"
+          >
+            <div className="flex flex-col gap-3.5">
+              <div className="p-2.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 w-fit border border-border text-zinc-800 dark:text-zinc-200">
+                <ShieldAlert className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500 font-medium">
+                  TryHackMe Global Ranking
+                </span>
+                <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mt-1 font-sans">
+                  TryHackMe Top 5% Globally
+                </h3>
+              </div>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
+                Ranked in top 5% worldwide solving CTFs with emphasis on web application vulnerabilities, authentication mechanics, and exploit analysis.
+              </p>
+            </div>
+            <div className="mt-5 pt-3.5 border-t border-border text-xs font-mono text-zinc-500">
+              Field: Application Security
+            </div>
+          </motion.div>
+
+          {/* Signal 2: Hire-4-Thon 2nd Place */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.12 }}
+            className="rounded-xl border border-border bg-surface/50 p-5 flex flex-col justify-between hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors"
+          >
+            <div className="flex flex-col gap-3.5">
+              <div className="p-2.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 w-fit border border-border text-zinc-800 dark:text-zinc-200">
+                <Trophy className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500 font-medium">
+                  National Hackathon Runner-Up
+                </span>
+                <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mt-1 font-sans">
+                  Hire-4-Thon Hackathon — 2nd Place
+                </h3>
+              </div>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
+                Secured 2nd place nationwide in 2026 for building QuizGenAI, dynamic assessment generation backend powered by asynchronous FastAPI pipelines.
+              </p>
+            </div>
+            <div className="mt-5 pt-3.5 border-t border-border text-xs font-mono text-zinc-500">
+              Year: 2026
+            </div>
+          </motion.div>
+
+          {/* Signal 3: Academic Foundations */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.19 }}
+            className="rounded-xl border border-border bg-surface/50 p-5 flex flex-col justify-between hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors"
+          >
+            <div className="flex flex-col gap-3.5">
+              <div className="p-2.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 w-fit border border-border text-zinc-800 dark:text-zinc-200">
+                <GraduationCap className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500 font-medium">
+                  Academic Record
+                </span>
+                <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mt-1 font-sans">
+                  KS Institute of Technology
+                </h3>
+              </div>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
+                B.E. in Computer Science & Engineering. Maintained an 8.88 CGPA through Semester 6 with strong command over algorithms, operating systems, and networking.
+              </p>
+            </div>
+            <div className="mt-5 pt-3.5 border-t border-border text-xs font-mono text-zinc-500 flex justify-between">
+              <span>CGPA: 8.88 / 10.0</span>
+              <span>Expected 2027</span>
+            </div>
+          </motion.div>
+        </div>
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Signal 1: TryHackMe Top 5% */}
-        <div className="relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-950/70 p-6 flex flex-col justify-between hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors shadow-sm dark:shadow-none">
-          <div className="flex flex-col gap-4">
-            <div className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-900 w-fit border border-zinc-200 dark:border-zinc-800 text-accent">
-              <ShieldAlert className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-xs font-mono uppercase tracking-wider text-accent font-medium">
-                TryHackMe Global Ranking
-              </span>
-              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mt-1">
-                TryHackMe Top 5% Globally
-              </h3>
-            </div>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Consistently ranked in the top 5% worldwide solving CTFs focused on web application vulnerabilities, privilege escalation, and auth security.
-            </p>
-          </div>
-          <div className="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-900 text-xs font-mono text-zinc-500">
-            Field: Application Security
-          </div>
-        </div>
-
-        {/* Signal 2: Hire-4-Thon 2nd Place */}
-        <div className="relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-950/70 p-6 flex flex-col justify-between hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors shadow-sm dark:shadow-none">
-          <div className="flex flex-col gap-4">
-            <div className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-900 w-fit border border-zinc-200 dark:border-zinc-800 text-accent">
-              <Trophy className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-xs font-mono uppercase tracking-wider text-accent font-medium">
-                National Hackathon
-              </span>
-              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mt-1">
-                Hire-4-Thon Hackathon — 2nd Place
-              </h3>
-            </div>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Secured 2nd place nationwide in 2026 for building QuizGenAI, an AI-powered dynamic evaluation platform with modular FastAPI architecture.
-            </p>
-          </div>
-          <div className="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-900 text-xs font-mono text-zinc-500">
-            Year: 2026
-          </div>
-        </div>
-
-        {/* Signal 3: Academic Foundations */}
-        <div className="relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-950/70 p-6 flex flex-col justify-between hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors shadow-sm dark:shadow-none">
-          <div className="flex flex-col gap-4">
-            <div className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-900 w-fit border border-zinc-200 dark:border-zinc-800 text-accent">
-              <GraduationCap className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-xs font-mono uppercase tracking-wider text-accent font-medium">
-                Academic Record
-              </span>
-              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mt-1">
-                KS Institute of Technology
-              </h3>
-            </div>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              B.E. in Computer Science & Engineering (Expected 2027). Maintained an 8.88 CGPA through Semester 6 with a focus on core CS fundamentals.
-            </p>
-          </div>
-          <div className="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-900 text-xs font-mono text-zinc-500 flex justify-between">
-            <span>CGPA: 8.88 / 10.0</span>
-            <span>Batch of 2027</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    </motion.section>
   );
 };

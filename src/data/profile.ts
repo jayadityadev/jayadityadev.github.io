@@ -28,7 +28,7 @@ export const profileData: Profile = {
   name: "Jayaditya Dev",
   role: "Systems / Backend / AI Engineer",
   tagline: "Backend engineer. AI systems. Production-first.",
-  status: "AVAILABLE FOR FULL-TIME ROLES (2027)",
+  status: "AVAILABLE FOR FULL-TIME ROLES",
   email: "jayadityadev10@gmail.com",
   location: "Bengaluru, Karnataka, IN",
   summary:

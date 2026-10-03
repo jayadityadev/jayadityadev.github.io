@@ -6,8 +6,8 @@ import { experienceData } from "@/data/experience";
 describe("Data Contract Seam", () => {
   it("profileData has valid candidate identity and links", () => {
     expect(profileData.name).toBe("Jayaditya Dev");
-    expect(profileData.tagline).toBe("Backend engineer. AI systems. Production-first.");
-    expect(profileData.status).toContain("AVAILABLE FOR FULL-TIME ROLES");
+    expect(profileData.status).toBe("AVAILABLE FOR FULL-TIME ROLES");
+    expect(profileData.status).not.toContain("2027");
     expect(profileData.email).toBe("jayadityadev10@gmail.com");
     expect(profileData.links.github).toBe("https://github.com/jayadityadev");
     expect(profileData.links.linkedin).toBe("https://linkedin.com/in/jayadityadev26");

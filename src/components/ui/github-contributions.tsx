@@ -44,16 +44,16 @@ export const GithubContributions: React.FC = () => {
   const getCellColor = (level: number) => {
     switch (level) {
       case 4:
-        return "bg-accent";
+        return "bg-zinc-950 dark:bg-zinc-100";
       case 3:
-        return "bg-zinc-300 dark:bg-zinc-200/90";
+        return "bg-zinc-700 dark:bg-zinc-300";
       case 2:
-        return "bg-zinc-400/80 dark:bg-zinc-400/70";
+        return "bg-zinc-400 dark:bg-zinc-500";
       case 1:
-        return "bg-zinc-600/50 dark:bg-zinc-600/50";
+        return "bg-zinc-200 dark:bg-zinc-800";
       case 0:
       default:
-        return "bg-zinc-800/30 dark:bg-zinc-800/40";
+        return "bg-zinc-100 dark:bg-zinc-900/60";
     }
   };
 
@@ -62,8 +62,8 @@ export const GithubContributions: React.FC = () => {
       {/* Header Info */}
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <GitCommit className="w-4 h-4 text-accent" />
-          <span className="font-mono text-xs font-semibold text-zinc-100">
+          <GitCommit className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
+          <span className="font-mono text-xs font-semibold text-zinc-900 dark:text-zinc-100">
             1,480+ contributions
           </span>
           <span className="text-zinc-500 font-mono text-xs hidden sm:inline">
@@ -75,7 +75,7 @@ export const GithubContributions: React.FC = () => {
           href="https://github.com/jayadityadev"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs font-mono text-zinc-400 hover:text-white flex items-center gap-1 transition-colors"
+          className="text-xs font-mono text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white flex items-center gap-1 transition-colors"
         >
           <Github className="w-3.5 h-3.5" />
           <span>@jayadityadev</span>
@@ -94,9 +94,9 @@ export const GithubContributions: React.FC = () => {
                     setActiveCell({ date: day.date, count: day.count })
                   }
                   onMouseLeave={() => setActiveCell(null)}
-                  className={`w-[10px] h-[10px] rounded-[2px] transition-colors cursor-pointer ${getCellColor(
+                  className={`w-[10px] h-[10px] rounded-[2px] transition-colors cursor-pointer border border-border/20 ${getCellColor(
                     day.level
-                  )} hover:ring-1 hover:ring-accent`}
+                  )} hover:ring-1 hover:ring-zinc-400`}
                   title={`${day.count} contribution(s)`}
                 />
               ))}
@@ -108,17 +108,17 @@ export const GithubContributions: React.FC = () => {
       {/* Footer & Legend */}
       <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500 pt-1">
         <figcaption>
-          <span className="text-accent font-semibold">Fig. 2.</span> Monochrome Contribution Graph
+          <span className="text-zinc-700 dark:text-zinc-300 font-semibold">Fig. 2.</span> Monochrome Contribution Graph
         </figcaption>
 
         <div className="flex items-center gap-1.5">
           <span>Less</span>
           <div className="flex gap-1">
-            <span className="w-2.5 h-2.5 rounded-[2px] bg-zinc-800/40" />
-            <span className="w-2.5 h-2.5 rounded-[2px] bg-zinc-600/50" />
-            <span className="w-2.5 h-2.5 rounded-[2px] bg-zinc-400/70" />
-            <span className="w-2.5 h-2.5 rounded-[2px] bg-zinc-200/90" />
-            <span className="w-2.5 h-2.5 rounded-[2px] bg-accent" />
+            <span className="w-2.5 h-2.5 rounded-[2px] bg-zinc-100 dark:bg-zinc-900/60 border border-border/20" />
+            <span className="w-2.5 h-2.5 rounded-[2px] bg-zinc-200 dark:bg-zinc-800 border border-border/20" />
+            <span className="w-2.5 h-2.5 rounded-[2px] bg-zinc-400 dark:bg-zinc-500 border border-border/20" />
+            <span className="w-2.5 h-2.5 rounded-[2px] bg-zinc-700 dark:bg-zinc-300 border border-border/20" />
+            <span className="w-2.5 h-2.5 rounded-[2px] bg-zinc-950 dark:bg-zinc-100 border border-border/20" />
           </div>
           <span>More</span>
         </div>

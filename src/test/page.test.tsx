@@ -20,13 +20,13 @@ describe("Root Page Assembly & Footer (Seam 1)", () => {
     // Experience
     expect(screen.getAllByText("7HiddenLayers").length).toBeGreaterThan(0);
 
-    // Projects Bento (All 4 projects + GitHub graph + Agentic card)
+    // Projects Bento (All 4 projects + GitHub graph)
     expect(screen.getByText("Guardian AI")).toBeInTheDocument();
     expect(screen.getByText("Brain Tumor Classification System")).toBeInTheDocument();
     expect(screen.getByText("QuizGenAI")).toBeInTheDocument();
     expect(screen.getByText("QuantNiti")).toBeInTheDocument();
     expect(screen.getByText(/Fig\. 2\./i)).toBeInTheDocument();
-    expect(screen.getByText(/Autonomous Agentic Engineering/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Autonomous Agentic Engineering/i)).not.toBeInTheDocument();
 
     // Credentials
     expect(screen.getByText(/TryHackMe Top 5% Globally/i)).toBeInTheDocument();

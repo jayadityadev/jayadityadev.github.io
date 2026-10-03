@@ -5,14 +5,13 @@ import { IllustratedAvatar } from "@/components/ui/illustrated-avatar";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 describe("Illustrated Avatar & Theme Toggle", () => {
-  it("renders dual-theme avatar with technical caption Fig. 1.", () => {
+  it("renders dual-theme avatar with static light and dark mode images", () => {
     render(<IllustratedAvatar />);
 
-    expect(screen.getByText(/Fig\. 1\./i)).toBeInTheDocument();
     const images = screen.getAllByRole("img");
     expect(images.length).toBeGreaterThanOrEqual(2);
-    expect(screen.getByAltText(/Avatar sketch/i)).toBeInTheDocument();
-    expect(screen.getByAltText(/Avatar dark/i)).toBeInTheDocument();
+    expect(screen.getByAltText(/avatar in light mode/i)).toBeInTheDocument();
+    expect(screen.getByAltText(/avatar in dark mode/i)).toBeInTheDocument();
   });
 
   it("renders theme toggle button with accessible label", () => {
