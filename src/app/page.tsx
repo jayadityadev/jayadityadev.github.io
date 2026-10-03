@@ -3,7 +3,6 @@ import { Navbar } from "@/components/sections/navbar";
 import { Hero } from "@/components/sections/hero";
 import { MarqueeTicker } from "@/components/ui/marquee";
 import { ExperienceSection } from "@/components/sections/experience";
-import { TimelineSection } from "@/components/sections/timeline";
 import { ProjectsBento } from "@/components/sections/projects-bento";
 import { CredentialsSection } from "@/components/sections/credentials";
 import { Footer } from "@/components/sections/footer";
@@ -14,7 +13,7 @@ export default function HomePage() {
       {/* Fixed Navigation */}
       <Navbar />
 
-      {/* Hero Section with Mouse Aura & 3D Tilt Avatar */}
+      {/* Hero Section with Antigravity Particles & 3D Tilt Avatar */}
       <div id="about" className="w-full">
         <Hero />
       </div>
@@ -27,10 +26,7 @@ export default function HomePage() {
       {/* Experience Spotlight (7HiddenLayers) */}
       <ExperienceSection />
 
-      {/* Trajectory & Milestones Connected Timeline */}
-      <TimelineSection />
-
-      {/* Balanced Bento Grid Projects (Guardian, Brain Tumor, QuizGen, QuantNiti, GitHub Graph, Agentic) */}
+      {/* Balanced Bento Grid Projects (GitHub Graph Banner, 2x2 Projects, Agentic Card) */}
       <ProjectsBento />
 
       {/* Credentials & Signals */}

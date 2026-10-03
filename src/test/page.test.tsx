@@ -20,9 +20,6 @@ describe("Root Page Assembly & Footer (Seam 1)", () => {
     // Experience
     expect(screen.getAllByText("7HiddenLayers").length).toBeGreaterThan(0);
 
-    // Timeline / Trajectory
-    expect(screen.getByText(/Engineering Trajectory/i)).toBeInTheDocument();
-
     // Projects Bento (All 4 projects + GitHub graph + Agentic card)
     expect(screen.getByText("Guardian AI")).toBeInTheDocument();
     expect(screen.getByText("Brain Tumor Classification System")).toBeInTheDocument();

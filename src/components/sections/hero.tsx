@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { profileData } from "@/data/profile";
 import { PulseBadge } from "@/components/ui/pulse-badge";
 import { IllustratedAvatar } from "@/components/ui/illustrated-avatar";
+import { AntigravityParticles } from "@/components/ui/antigravity-particles";
 import { ArrowDown, FileText, Github, Linkedin } from "lucide-react";
 
 export const Hero: React.FC = () => {
@@ -16,7 +17,7 @@ export const Hero: React.FC = () => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    // Subtle 3D tilt angles (max +/- 10 degrees)
+    // Subtle 3D tilt angles (max +/- 8 degrees)
     const tiltX = -((y - centerY) / centerY) * 8;
     const tiltY = ((x - centerX) / centerX) * 8;
 
@@ -38,6 +39,9 @@ export const Hero: React.FC = () => {
       onMouseLeave={handleMouseLeave}
       className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-4 overflow-hidden"
     >
+      {/* Interactive Antigravity Particle Physics Canvas */}
+      <AntigravityParticles />
+
       {/* Interactive mouse-following radial spotlight aura */}
       <div
         className="absolute pointer-events-none -z-10 transition-all duration-300 ease-out"

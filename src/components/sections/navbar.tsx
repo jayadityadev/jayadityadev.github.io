@@ -21,15 +21,12 @@ export const Navbar: React.FC = () => {
         </a>
 
         {/* Desktop Anchor Links */}
-        <div className="hidden md:flex items-center gap-5 text-xs font-mono tracking-widest uppercase text-zinc-400">
+        <div className="hidden md:flex items-center gap-6 text-xs font-mono tracking-widest uppercase text-zinc-400">
           <a href="#about" className="hover:text-zinc-100 transition-colors">
             About
           </a>
           <a href="#experience" className="hover:text-zinc-100 transition-colors">
             Experience
-          </a>
-          <a href="#trajectory" className="hover:text-zinc-100 transition-colors">
-            Trajectory
           </a>
           <a href="#projects" className="hover:text-zinc-100 transition-colors">
             Projects
@@ -101,13 +98,6 @@ export const Navbar: React.FC = () => {
             className="py-1 hover:text-accent"
           >
             Experience
-          </a>
-          <a
-            href="#trajectory"
-            onClick={() => setMobileMenuOpen(false)}
-            className="py-1 hover:text-accent"
-          >
-            Trajectory
           </a>
           <a
             href="#projects"
