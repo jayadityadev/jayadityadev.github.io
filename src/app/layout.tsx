@@ -19,6 +19,15 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Jayaditya Dev. Systems, Backend, and AI Engineer specializing in FastAPI, PostgreSQL, asynchronous ML inference pipelines, and RAG architectures.",
   authors: [{ name: "Jayaditya Dev", url: "https://github.com/jayadityadev" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Jayaditya Dev | Systems, Backend & AI Engineer",
     description:
