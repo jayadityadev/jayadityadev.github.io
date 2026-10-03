@@ -28,16 +28,16 @@ export const BentoCard: React.FC<BentoCardProps> = ({
   };
 
   const sizeClasses = {
-    large: "col-span-1 lg:col-span-12",
-    medium: "col-span-1 lg:col-span-6",
-    small: "col-span-1 lg:col-span-6",
+    large: "col-span-1 lg:col-span-12 p-4 sm:p-5",
+    medium: "col-span-1 lg:col-span-6 p-4 sm:p-5",
+    small: "col-span-1 lg:col-span-6 p-3 sm:p-4",
   };
 
   return (
     <div
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden rounded-xl border border-border bg-surface/50 p-5 sm:p-7 transition-colors duration-200 hover:border-zinc-400 dark:hover:border-zinc-700 shadow-sm dark:shadow-none ${sizeClasses[size]} ${className}`}
+      className={`relative overflow-hidden rounded-xl border border-border bg-surface/50 transition-colors duration-200 hover:border-zinc-400 dark:hover:border-zinc-700 shadow-sm dark:shadow-none ${sizeClasses[size]} ${className}`}
     >
       {/* Subtle Dynamic Cursor Spotlight Gradient */}
       {mousePos && (
@@ -49,7 +49,7 @@ export const BentoCard: React.FC<BentoCardProps> = ({
         />
       )}
 
-      {/* Decorative technical corner reticle */}
+      {/* Decorative technical corner reticles */}
       <span className="pointer-events-none absolute top-0 right-0 w-2 h-2 border-t border-r border-border" />
       <span className="pointer-events-none absolute bottom-0 left-0 w-2 h-2 border-b border-l border-border" />
 

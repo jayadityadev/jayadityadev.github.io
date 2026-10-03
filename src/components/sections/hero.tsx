@@ -3,8 +3,9 @@
 import React from "react";
 import { profileData } from "@/data/profile";
 import { IllustratedAvatar } from "@/components/ui/illustrated-avatar";
-import { VerifiedBadge } from "@/components/ui/verified-badge";
-import { Github, Linkedin, Mail, FileText, MapPin, GraduationCap, ArrowDown } from "lucide-react";
+import { TerminalTypewriter } from "@/components/ui/terminal-typewriter";
+import { LatencyTester } from "@/components/ui/latency-tester";
+import { Github, Linkedin, Mail, FileText, MapPin, GraduationCap } from "lucide-react";
 
 export const Hero: React.FC = () => {
   return (
@@ -29,28 +30,24 @@ export const Hero: React.FC = () => {
 
             {/* Left Isometric Cube Unit */}
             <g transform="translate(140, 70)">
-              {/* Top face */}
               <polygon
                 points="0,-30 50,-55 100,-30 50,-5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.2"
               />
-              {/* Left face */}
               <polygon
                 points="0,-30 50,-5 50,45 0,20"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.2"
               />
-              {/* Right face */}
               <polygon
                 points="50,-5 100,-30 100,20 50,45"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.2"
               />
-              {/* Technical diagonal cross hatchings */}
               <line x1="12" y1="-24" x2="50" y2="-5" strokeWidth="0.6" strokeDasharray="2 2" />
               <line x1="25" y1="-18" x2="50" y2="-5" strokeWidth="0.6" strokeDasharray="2 2" />
               <line x1="50" y1="-5" x2="88" y2="-24" strokeWidth="0.6" strokeDasharray="2 2" />
@@ -58,7 +55,6 @@ export const Hero: React.FC = () => {
 
             {/* Center Elevated Isometric Node */}
             <g transform="translate(260, 40)">
-              {/* Top face with cutout */}
               <polygon
                 points="0,-25 60,-55 120,-25 60,5"
                 fill="none"
@@ -72,7 +68,6 @@ export const Hero: React.FC = () => {
                 strokeWidth="1"
                 strokeDasharray="2 2"
               />
-              {/* Left & Right faces */}
               <polygon
                 points="0,-25 60,5 60,55 0,25"
                 fill="none"
@@ -125,26 +120,25 @@ export const Hero: React.FC = () => {
 
           {/* Right Column: Name, Tagline & Summary */}
           <div className="flex flex-col flex-1 min-w-0 w-full">
-            {/* Terminal Command & Status Bar */}
-            <div className="w-full px-4 py-2 sm:py-2.5 border-b border-border bg-surface/40 flex items-center justify-between font-mono text-xs select-none">
-              <div className="flex items-center gap-2 min-w-0">
-                <span className="text-zinc-500 hidden sm:inline">~/portfolio</span>
-                <span className="text-emerald-500 font-bold">❯</span>
-                <span className="text-zinc-700 dark:text-zinc-300 font-medium truncate">
+            {/* Terminal Command & Status Bar with dynamic typewriter */}
+            <div className="w-full px-4 py-2 sm:py-2.5 border-b border-border bg-surface/40 flex flex-wrap items-center justify-between gap-2 font-mono text-xs select-none">
+              <TerminalTypewriter />
+
+              <div className="flex items-center gap-2 text-zinc-500 shrink-0 ml-auto">
+                <span className="text-[11px] uppercase tracking-wide text-zinc-600 dark:text-zinc-400">
                   {profileData.status}
                 </span>
+                <span className="relative flex h-2 w-2 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
               </div>
-              <span className="relative flex h-2 w-2 shrink-0 ml-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
             </div>
 
-            {/* Name + Verified Badge */}
+            {/* Name without verified badge + Tagline */}
             <div className="px-4 py-3 sm:py-4 border-b border-border">
-              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 font-sans flex items-center gap-2">
-                <span>{profileData.name}</span>
-                <VerifiedBadge className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 font-sans">
+                {profileData.name}
               </h1>
               <p className="font-mono text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-1">
                 {profileData.tagline}
@@ -200,6 +194,7 @@ export const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               download="Jayaditya_Dev_Resume.pdf"
+              aria-label="Download CV"
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-900 dark:border-zinc-100 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 text-xs font-mono font-medium hover:opacity-90 transition-opacity"
             >
               <FileText className="w-3.5 h-3.5" />
@@ -207,8 +202,10 @@ export const Hero: React.FC = () => {
             </a>
           </div>
 
-          {/* Quick Signal Badges */}
-          <div className="flex items-center gap-4 text-xs font-mono text-zinc-500">
+          {/* Interactive Hero Element: Edge Ping Latency Tester + Signal Badges */}
+          <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-500">
+            <LatencyTester />
+
             <span className="flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-zinc-400" />
               <span>Bengaluru, IN</span>

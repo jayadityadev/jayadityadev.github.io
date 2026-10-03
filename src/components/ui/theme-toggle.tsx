@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { Sun, Moon } from "lucide-react";
 
 export const ThemeToggle: React.FC = () => {
   const [isDark, setIsDark] = useState(true);
@@ -11,37 +12,22 @@ export const ThemeToggle: React.FC = () => {
     setIsDark(isDarkMode);
   }, []);
 
-  const toggleTheme = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const toggleTheme = () => {
     const nextDark = !isDark;
     setIsDark(nextDark);
 
-    const updateDOM = () => {
-      if (nextDark) {
-        document.documentElement.classList.add("dark");
-        document.documentElement.classList.remove("light");
-        if (typeof window !== "undefined" && window.localStorage) {
-          window.localStorage.setItem("theme", "dark");
-        }
-      } else {
-        document.documentElement.classList.remove("dark");
-        document.documentElement.classList.add("light");
-        if (typeof window !== "undefined" && window.localStorage) {
-          window.localStorage.setItem("theme", "light");
-        }
+    if (nextDark) {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+      if (typeof window !== "undefined" && window.localStorage) {
+        window.localStorage.setItem("theme", "dark");
       }
-    };
-
-    // Use View Transitions API if supported for the circular clip wipe
-    if (typeof document !== "undefined" && "startViewTransition" in document) {
-      const buttonRect = e.currentTarget.getBoundingClientRect();
-      const x = buttonRect.left + buttonRect.width / 2;
-      const y = buttonRect.top + buttonRect.height / 2;
-      document.documentElement.style.setProperty("--theme-x", `${x}px`);
-      document.documentElement.style.setProperty("--theme-y", `${y}px`);
-
-      (document as unknown as { startViewTransition: (cb: () => void) => void }).startViewTransition(updateDOM);
     } else {
-      updateDOM();
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+      if (typeof window !== "undefined" && window.localStorage) {
+        window.localStorage.setItem("theme", "light");
+      }
     }
   };
 
@@ -49,17 +35,27 @@ export const ThemeToggle: React.FC = () => {
     <button
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="relative p-1.5 rounded-full border border-border bg-surface hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 transition-all active:scale-95"
+      className="relative p-1.5 rounded-full border border-border bg-surface/80 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 transition-colors active:scale-95 flex items-center justify-center w-8 h-8"
     >
-      <svg
-        viewBox="0 0 32 32"
-        fill="currentColor"
-        className={`w-4 h-4 transition-transform duration-500 origin-center ${
-          isDark ? "rotate-180 text-zinc-100" : "rotate-0 text-zinc-900"
-        }`}
-      >
-        <path d="M16 .5C7.4.5.5 7.4.5 16S7.4 31.5 16 31.5 31.5 24.6 31.5 16 24.6.5 16 .5zm0 28.1V3.4C23 3.4 28.6 9 28.6 16S23 28.6 16 28.6z" />
-      </svg>
+      <div className="relative w-4 h-4">
+        {/* Sun Icon (Visible in light mode) */}
+        <Sun
+          className={`w-4 h-4 text-amber-500 absolute inset-0 transition-all duration-300 transform ${
+            isDark
+              ? "rotate-90 scale-0 opacity-0 pointer-events-none"
+              : "rotate-0 scale-100 opacity-100"
+          }`}
+        />
+
+        {/* Moon Icon (Visible in dark mode) */}
+        <Moon
+          className={`w-4 h-4 text-zinc-200 absolute inset-0 transition-all duration-300 transform ${
+            isDark
+              ? "rotate-0 scale-100 opacity-100"
+              : "-rotate-90 scale-0 opacity-0 pointer-events-none"
+          }`}
+        />
+      </div>
     </button>
   );
 };
