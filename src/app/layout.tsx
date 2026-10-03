@@ -23,10 +23,11 @@ export const metadata: Metadata = {
     title: "Jayaditya Dev | Systems, Backend & AI Engineer",
     description:
       "Backend engineer. AI systems. Production-first. Explore real-time backends, deep learning pipelines, and engineering credentials.",
-    url: "https://jayadityadev.github.io",
+    url: "https://jayadityadev.tech",
     siteName: "Jayaditya Dev Portfolio",
     type: "website",
   },
+  metadataBase: new URL("https://jayadityadev.tech"),
 };
 
 export default function RootLayout({

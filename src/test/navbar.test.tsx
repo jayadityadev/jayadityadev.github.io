@@ -7,7 +7,7 @@ describe("Navbar Component (Seam 1 & 2)", () => {
   it("renders brand prompt and section navigation links", () => {
     render(<Navbar />);
 
-    expect(screen.getByText(/jayaditya\.dev/i)).toBeInTheDocument();
+    expect(screen.getByText(/jayadityadev\.tech/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /experience/i })).toHaveAttribute("href", "#experience");
     expect(screen.getByRole("link", { name: /projects/i })).toHaveAttribute("href", "#projects");
     expect(screen.getByRole("link", { name: /credentials/i })).toHaveAttribute("href", "#credentials");

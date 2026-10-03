@@ -8,7 +8,7 @@ describe("Root Page Assembly & Footer (Seam 1)", () => {
     render(<HomePage />);
 
     // Navbar & Hero
-    expect(screen.getAllByText(/jayaditya\.dev/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/jayadityadev\.tech/i).length).toBeGreaterThan(0);
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Jayaditya Dev");
 
     // Avatar Fig. 1.

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export const Footer: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
-  const curlCommand = `curl -X POST https://jayaditya.dev/api/contact \\
+  const curlCommand = `curl -X POST https://jayadityadev.tech/api/contact \\
   -H "Content-Type: application/json" \\
   -d '{"name": "Recruiter", "email": "${profileData.email}", "message": "Let us connect"}'`;
 

@@ -17,7 +17,7 @@ export const Navbar: React.FC = () => {
           className="flex items-center gap-2 font-mono text-xs sm:text-sm tracking-wider text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors shrink-0"
         >
           <Terminal className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
-          <span className="font-semibold">jayaditya.dev</span>
+          <span className="font-semibold">jayadityadev.tech</span>
         </a>
 
         {/* Desktop Anchor Links */}
